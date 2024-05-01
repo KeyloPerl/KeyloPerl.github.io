@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Sidebar 01</title>
+  	<title>Keylo Perl</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="js/prism.js"></script>
+    <link rel="stylesheet" href="css/prism.css">
 		<link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -17,13 +19,13 @@
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
 				<div class="p-4 pt-5">
-		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/Keylo-small-e.jpg);"></a>
 	        <ul class="list-unstyled components mb-5">
 	          <li class="active">  
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">About the Robot</a>
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quickstart</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#Components">Quickstart</a>
+                    <a href="#Overiew">Overview</a>
                 </li>
                 <li>
                     <a href="#Battery">Battery</a>
@@ -33,28 +35,31 @@
                 </li>
 	            </ul>
 	          </li>
+            <li>
+              <a href="#">Hardware Upgrades</a>
+            </li>
 	          <li>
-	              <a href="#">About</a>
-	          </li>
-	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ROS driver</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="#">Page 1</a>
+                    <a href="#">Basics</a>
                 </li>
                 <li>
-                    <a href="#">Page 2</a>
+                    <a href="#">Teleoperation</a>
                 </li>
                 <li>
-                    <a href="#">Page 3</a>
+                    <a href="#">Autonomous Navigation</a>
+                </li>
+                <li>
+                  <a href="#">Realsense drivers</a>
                 </li>
               </ul>
 	          </li>
 	          <li>
-              <a href="#">Portfolio</a>
+              <a href="#">Talking Avatar</a>
 	          </li>
 	          <li>
-              <a href="#">Contact</a>
+              <a href="#">Future Improvements</a>
 	          </li>
 	        </ul>
 
@@ -79,25 +84,80 @@
 
           </div>
         </nav>
-
+        <img src="images/Keylo-small-e.jpg" style="display:block;margin-left:auto;margin-right: auto;"><br><br>
         <h2 class="mb-4">About the robot</h2>
-        <p>Keylo is a robot build by WYCA robotics for the purpose of telepresense. The datasheet of the robot is embedded down below</p>
+        <p>Keylo is a robot build by WYCA robotics for the purpose of telepresense. <a href="https://www.generationrobots.com/media/Wyca%20Keylo%20data%20sheet%20VE-MAJ.pdf">Datasheet</a></p>
         <h2 class="mb-4">Quick start</h2>
-        <p>The Robot is equipped with an Intel NUC CPU that runs ubuntu 18.04 with preinstalled ROS melodic. (Now replaced with GEEKOM IT13 mini PC) The ultrasonic sensors are connected to the circuit board which contains 
-          the arm-M3 processor. The motors are controller by the ____ motor driver connected to arm processor board. The control commands are given to the arduino Leonardo and then to the arm processor.
-          The arm processor controlls all of the interactions with the motor, LED strips and ultrasonic sensors.  
-
-          To turn on the Robot simply push the breaker up. Press the power button on the CPU to turn ON the Robot.
-        </p>
+        <p>The Robot is equipped with an Intel NUC CPU that runs ubuntu 18.04 with preinstalled ROS melodic (Now replaced with GEEKOM IT13 mini PC). Dwon below is an image of the CPU in the robot 
+          connected to the touch screen displau with HDMI cables.
+        </p> 
+          <img src="images/CPUI.jpg" style="height:auto;width:50%;display:block;margin-left:auto;margin-right:auto;"><br><br>
+        <p> The ultrasonic sensors or range sensors are connected to the circuit board which contains 
+          the arm-M3 processor. The LIDAR is connected to the USB hub on the Robot.
+          <img src="images/Ultrasonic_sensors.jpg" style="height:auto;width:50%;display:block;margin-left:auto;margin-right:auto;"><br><br>
+          The motors are controlled by a motor driver connected to arm processor board. The control commands are given to the arduino Leonardo and then to the arm processor.
+          The arm processor controlls all of the interactions with the motor, LED strips and ultrasonic sensors.</p><br>
+          <p>Image left : Motor Driver, Image right : Arduino Leonardo.</p><br><br>
+        <div class="container-fluid">
+          <div class="row">
+          <img src="images/Motor_driver.jpg" class="col-sm-6"><img src="images/Arduino_Leonardo.jpg" class="col-sm-6">
+        </div> 
+      </div><br><br> 
+         <p> To turn on the Robot simply push the breaker up. Press the power button on the CPU to turn ON the Robot.
+        </p><br><br>
+        <img src="images/Push_breaker.jpg" style="display:block;margin-left: auto;margin-right:auto;width:auto;height:8%;"><br><br>
         <h2 class="mb-4">Battery</h2>
-        <p>The current battery is _______ is rated for 12V 50Ah.two of these batteries to connectED in series to make 24V.  </p>
-        <h2 class="mb-4">ROS drivers</h2>
-        <h4>Teleoperation</h4>
-        <p></p>   
+        <p>The current battery is Li-time rechargable LiFePo (Lithium Iron Phosphate) battery rated for 12V 50Ah. Two of these batteries are connected in series to make 24V. The battery is connected using ring terminals 
+          of the appropriate size crimped to the wire. Down below shows an image of the battery connected with ring connectors</p><br><br>
+        <img src="">
+        <h2 class="mb-4">Charging</h2>
+        <p>There are two ways to charge the battery. 1. Set the charger to 24V and charge both batteries at the sane time. 2. Set the charger to 12V and charge one battery at a time. The advantage of 
+          the first method is charging both batteries at the same time but leads to uneven battery charging in the long run. The first method is good if the battery are regularly checked and balanced. This can
+          be overcome by using the second method. Make sure the battery voltages are same or close. If the battery is going to stay idle then the best way to keep them safe is to put the charger on float mode and 
+          connect them to the battery, this allows the battery to stay idle for even months. It is advised to remove the batteries every couple of months, connect them in parallel and balance out the uneven voltage.
+
+
+        </p><br><br>
+
+        <h2 class="mb-4">ROS drivers</h2><br>
+        <h4>Basics</h4>
+        <p>The robot uses ROS melodic. The ROS drivers are found in the ubuntu home named as "Ros_ws". The "src/keylo_bringups" inside the workspace contain 
+          the launch files required to launch all the ROS nodes.
+          <img src="images/keylo_bringup.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:150%">   
+        </p><br>
+        <p>A list of launch files in the "keylo_bringup" is shown in the image below</p><br>
+        <img src="images/keylo_launch.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:150%"><br><br>   
+        <h4>Teleoperation</h4><br>
+        To teleoperate the robot, the motors controllers must be run using the ROS launch file.<br> 
+        <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup trial_keylo_base.launch</code></pre>
+        <br><p>This launch files launches all the base sensors and motors of keylo.</p>
+        <p>Connect the joystick to the robot using bluetooth. The correct input directory must be selected for the connected joystick. Run the command down below to list the connected joystick inputs.</p>
+        <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">jstest-gtk</code></pre><br><br>
+        <img src="images/joystick_gtk.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:50%"><br><br>
+        <p>Note that the frist input (/dev/input/js0) is our wireless controller, the second one (/dev/input/js1) is the input from the touch screen display of the Robot. </p>
+        <p> Test the joystick using the "jstest" command as given below. Add the appropriate subdirectory with the command.</p>
+        <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">jstest /dev/input/js0</code></pre><br><br> 
+        <img src="images/jstest.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:50%"><br><br>
+        <p>Before we run teleoperate the robot, some basic parameters must be checked. Navigate to the launch file and check the param file 
+          that is linked with the launch file. Change parameters as necessary, by default the enables buttons for normal and turbo modes are L1 and L2 
+          respectively. The velocity values can also be adjusted.
+        </p><br><br>
+        <div class="container-fluid">
+          <div class="row">
+          <img src="images/joy_launch.png" class="col-sm-6"><img src="images/joy_params.png" class="col-sm-6">
+        </div><br><br> 
+        <p>The teleop can be achieved by running the following command. Make sure to add the right subdirectory.</p>
+        <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch teleop_twist_joy teleop.launch joy_dev:=/dev/input/js1</code></pre><br><br>
+        Hold the shoulder button (L1 - normal , L2 - turbo) and push the thumbstick to run the robot.<br><br>
+        <h4>Autonomous Navigation</h4><br>
+        The navigation stack for the ROS 
+        <h4>Realsense Drivers</h4><br>
+        <p>To install the realsense drivers for ROS melodic visit the Github Repo of realsense website, <a href="https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy">https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy</a>
+        Install from the ubuntu apt package manager or build the drivers from source </p> 
       </div>
 		</div>
 
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script> 
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
