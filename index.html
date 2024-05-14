@@ -35,9 +35,6 @@
                 </li>
 	            </ul>
 	          </li>
-            <li>
-              <a href="#">Hardware Upgrades</a>
-            </li>
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ROS driver</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -47,6 +44,9 @@
                 <li>
                     <a href="#">Teleoperation</a>
                 </li>
+                <li>
+                  <a href="#">Mapping</a>
+              </li>
                 <li>
                     <a href="#">Autonomous Navigation</a>
                 </li>
@@ -86,14 +86,18 @@
         </nav>
         <img src="images/Keylo-small-e.jpg" style="display:block;margin-left:auto;margin-right: auto;"><br><br>
         <h2 class="mb-4">About the robot</h2>
-        <p>Keylo is a robot build by WYCA robotics for the purpose of telepresense. <a href="https://www.generationrobots.com/media/Wyca%20Keylo%20data%20sheet%20VE-MAJ.pdf">Datasheet</a></p>
+        <p>Keylo is a robot build by WYCA robotics for the purpose of telepresense. <a href="https://www.generationrobots.com/media/Wyca%20Keylo%20data%20sheet%20VE-MAJ.pdf">Datasheet</a>. The robot is built with a touch screen display, 
+        speakers and camera for interactions. With developements in AI, the Robot can be programmed to learn from its surroundings using the sensors and trained for
+      intelligence. The robot can Autonomously navigate using its sensor, obtain various informations using sensors such as depth camera, range sensors, LIDAR sensor and MIC sensor to make intelligent decisions, human interaction, 
+    robot planning and many more.  </p>
         <h2 class="mb-4">Quick start</h2>
-        <p>The Robot is equipped with an Intel NUC CPU that runs ubuntu 18.04 with preinstalled ROS melodic (Now replaced with GEEKOM IT13 mini PC). Dwon below is an image of the CPU in the robot 
-          connected to the touch screen displau with HDMI cables.
+        <p>The Robot is equipped with an Intel NUC CPU that runs ubuntu 18.04 with preinstalled ROS melodic (Now replaced with GEEKOM IT13 mini PC). Down below is an image of the CPU in the robot 
+          connected to the touch screen display with HDMI cables. The USB hub on the robot is where the LIDAR, Depth cameras, speaker, touch display and arduino are connected. 
+
         </p> 
           <img src="images/CPUI.jpg" style="height:auto;width:50%;display:block;margin-left:auto;margin-right:auto;"><br><br>
-        <p> The ultrasonic sensors or range sensors are connected to the circuit board which contains 
-          the arm-M3 processor. The LIDAR is connected to the USB hub on the Robot.
+        <p> The ultrasonic sensors or range sensors are connected to the circuit board which is embedded with 
+          the arm-M3 processor. It also contains all of the power electronic circuit to deliver power to all of the sub subsystems of the Robot. 
           <img src="images/Ultrasonic_sensors.jpg" style="height:auto;width:50%;display:block;margin-left:auto;margin-right:auto;"><br><br>
           The motors are controlled by a motor driver connected to arm processor board. The control commands are given to the arduino Leonardo and then to the arm processor.
           The arm processor controlls all of the interactions with the motor, LED strips and ultrasonic sensors.</p><br>
@@ -105,15 +109,19 @@
       </div><br><br> 
          <p> To turn on the Robot simply push the breaker up. Press the power button on the CPU to turn ON the Robot.
         </p><br><br>
-        <img src="images/Push_breaker.jpg" style="display:block;margin-left: auto;margin-right:auto;width:auto;height:8%;"><br><br>
+        <img src="images/Push_breaker.jpg" style="display:block;margin-left: auto;margin-right:auto;width:auto;height:4%;"><br><br>
         <h2 class="mb-4">Battery</h2>
         <p>The current battery is Li-time rechargable LiFePo (Lithium Iron Phosphate) battery rated for 12V 50Ah. Two of these batteries are connected in series to make 24V. The battery is connected using ring terminals 
           of the appropriate size crimped to the wire. Down below shows an image of the battery connected with ring connectors</p><br><br>
-        <img src="">
+          <img src="images/Battery.jpg" style="display:block;margin-left: auto;margin-right:auto;width:auto;height:4%;"><br><br>
         <h2 class="mb-4">Charging</h2>
-        <p>There are two ways to charge the battery. 1. Set the charger to 24V and charge both batteries at the sane time. 2. Set the charger to 12V and charge one battery at a time. The advantage of 
+        <p>There are two ways to charge the battery. 1. Set the charger to 24V and charge both batteries at the same time. 2. Set the charger to 12V and charge one battery at a time. The advantage of 
           the first method is charging both batteries at the same time but leads to uneven battery charging in the long run. The first method is good if the battery are regularly checked and balanced. This can
-          be overcome by using the second method. Make sure the battery voltages are same or close. If the battery is going to stay idle then the best way to keep them safe is to put the charger on float mode and 
+          be overcome by using the second method. Make sure the battery voltages are same or close to each other.<br><br>
+          Connect the batteries to the charger as shown in the image.<br><br>   
+        <img src="images/Charging.jpg" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:50%"><br><br>
+
+          If the battery is going to stay idle then the best way to keep them safe is to put the charger on float mode and 
           connect them to the battery, this allows the battery to stay idle for even months. It is advised to remove the batteries every couple of months, connect them in parallel and balance out the uneven voltage.
 
 
@@ -149,11 +157,83 @@
         <p>The teleop can be achieved by running the following command. Make sure to add the right subdirectory.</p>
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch teleop_twist_joy teleop.launch joy_dev:=/dev/input/js1</code></pre><br><br>
         Hold the shoulder button (L1 - normal , L2 - turbo) and push the thumbstick to run the robot.<br><br>
+        <h4>Mapping</h4><br>
+         <p>To map the floor, the sensors of the robot, especially the LIDAR and motor controllers must be launched. To launch the sensors on the robot, run the launch file</p>
+         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup trial_wyca_till_laser_pointloud.launch</code></pre><br><br>   
+        <p>The ROS navigation stack uses a map based navigation. One of best methods to generate maps is SLAM (Simultaneous Localization And Mapping), which simultaneously localized and maps the robot. The map is generated using gmapping_slam toolbox
+          of ROS to map the robot. The launch files takes in LIDAR topic as argument, in our case we use "/scan_nan_cleaned".</p> <br><br>
+          <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">rosrun gmapping slam_gmapping scan:=scan_nan_cleaned</code></pre><br><br>
+          <p>Open rviz and add the "/map" topic for real time mapping visualization</p>
+          <img src="" alt="rviz_mapping">
+          <p>Now move around the robot and map the surrounding. Once the mapping is done use the map server to save the generated map. </p>
+          <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">rosrun map_server map_saver</code></pre><br><br>
+          <p>Additionally you can also specify the name of the image file and resolution as ROS arguments.</p>  
         <h4>Autonomous Navigation</h4><br>
-        The navigation stack for the ROS 
+        <p>The launch file for the navigation stack of keylo robot is also under the "keylo_bringup" folder. But the "test_no_front_end.launch" file under the "test" folder 
+        launches all the necessary launch files required for navigation and teleoperation. </p>
+    
+        <p>To run the navigation stack of the Robot along with the localization (amcl particles), global, local costmap, map server, global and local trajectory planner, the command shown below is used to run the test_no_front_end launch file which does all of it. </p>
+        <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup test_no_front_end</code></pre><br><br>
+        <img src="" alt="test_no_front">
         <h4>Realsense Drivers</h4><br>
         <p>To install the realsense drivers for ROS melodic visit the Github Repo of realsense website, <a href="https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy">https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy</a>
-        Install from the ubuntu apt package manager or build the drivers from source </p> 
+        Install from the ubuntu apt package manager or build the drivers from source </p>
+        <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch realsense2_camera rs_camera.launch      # To launch a single camera
+roslaunch realsense2_camera rs_multiple.launch    # To launch multiple cameras</code></pre><br><br>
+
+        <h2 class="mb-4">Talking Avatar</h2><br>
+          The talking avatar is a opensource program from <a href="https://github.com/bornfree/talking_avatar">https://github.com/bornfree/talking_avatar</a>. This react applications uses webRendering of the avatar
+          with 3D animations. The backend of this program at <a href="https://github.com/bornfree/talking_avatar_backend">https://github.com/bornfree/talking_avatar_backend</a> is node application that uses azure_api in the backend 
+          to convert text to speech and animate lip movements. The azure api only provides some hours of free audio api request, after which it becomes paid.
+          The image down below shows the web application running in the browser as a local host. <br><br>
+          <img src="images/live_avatar.png" style="display:block;margin-left: auto;margin-right:auto;width:100%;height:auto;"><br><br>
+          <p>To run the front end react application simply cd into the folder, type the following command to install all the necessary dependencies and the next command runs the react application.   
+          </p>
+          <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">yarn install # Install all the necessary dependencies           
+yarn start # Start the App </code></pre><br><br>
+          <p>Note that there is a start button. The start button must be pressed in order to initiate the voice interaction. Note that the start button is necesarry because the audio 
+          of any webpage will only start if there is some events that is triggered intially. This feature is bought forth for security purposes.
+          <br>
+          The voice to text recognition model is running in python. It uses the "vosk" speech recognition model to convert speech to text.</p><br><br> 
+          <img src="images/vosk_model.png"><br><br>
+          <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-python">from vosk import Model, KaldiRecognizer
+import requests
+import pyaudio
+import json
+
+
+url = “http://localhost:5000/speech_out"™
+headers = {'Content-type': ‘application/json', ‘Accept’: ‘text/plain'}
+model = Model("“vosk-model-en-us-9.22")
+
+recognizer = KaldiRecognizer(model, 16000)
+
+mic = pyaudio.PyAudio()
+stream = mic.open(format=pyaudio.paInt16, channels=1, rate=16000, input=True, frames_per_buffer=8192)
+stream.start_stream()
+stripped_data = ""
+
+while True:
+  data = stream.read(4096,exception_on_overflow=False)
+  print("...")
+  if recognizer .AcceptWaveform(data) :
+    text = recognizer.Result()
+    #print (f"{text[14:-3]}")
+    stripped_data = text[14:-3]
+    data = {'msg':stripped_data}
+    print(data)
+    r = requests.post (url, data=json.dumps (data) ,headers=headers)
+    print(r.status_code)</code></pre><br><br>
+          <p>The text is then sent as a json using post requests to the node server. The "talking_avatar_backend" receives the request using the post method.
+            To install all dependencies, run the node server, use the commands below 
+          </p>
+          <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">npm install # Install all the necessary dependencies           
+npm start # Start the Node server </code></pre><br><br>
+          <p>The openai api runs in backend of the system, the image down below shows the openai api running in the backend of the system.</p><br><br> 
+          <img src="images/Openai_api_call.png"><br><br>
+
+          <p>The modified code for front and back end of the is available in the github repo : For front end <a href="https://github.com/sridharanram2001/talking_avatar">https://github.com/sridharanram2001/talking_avatar</a> and backend <a href="https://github.com/sridharanram2001/talking_avatar_backend">https://github.com/sridharanram2001/talking_avatar_backend</a></p>
+
       </div>
 		</div>
 
