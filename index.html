@@ -35,6 +35,9 @@
                 </li>
 	            </ul>
 	          </li>
+            <li>
+              <a href="#">Hardware Upgrades</a>
+            </li>
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ROS driver</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -92,16 +95,23 @@
     robot planning and many more.  </p>
         <h2 class="mb-4">Quick start</h2>
         <p>The Robot is equipped with an Intel NUC CPU that runs ubuntu 18.04 with preinstalled ROS melodic (Now replaced with GEEKOM IT13 mini PC). Down below is an image of the CPU in the robot 
-          connected to the touch screen display with HDMI cables. The USB hub on the robot is where the LIDAR, Depth cameras, speaker, touch display and arduino are connected. 
-
+          connected to the touch screen display with HDMI cables. The new GEEKOM MiniPC is preinstalled with Windows 11 and dual booted with ubuntu 18.04 to support ROS melodic drivers.    
         </p> 
-          <img src="images/CPUI.jpg" style="height:auto;width:50%;display:block;margin-left:auto;margin-right:auto;"><br><br>
-        <p> The ultrasonic sensors or range sensors are connected to the circuit board which is embedded with 
-          the arm-M3 processor. It also contains all of the power electronic circuit to deliver power to all of the sub subsystems of the Robot. 
-          <img src="images/Ultrasonic_sensors.jpg" style="height:auto;width:50%;display:block;margin-left:auto;margin-right:auto;"><br><br>
-          The motors are controlled by a motor driver connected to arm processor board. The control commands are given to the arduino Leonardo and then to the arm processor.
-          The arm processor controlls all of the interactions with the motor, LED strips and ultrasonic sensors.</p><br>
-          <p>Image left : Motor Driver, Image right : Arduino Leonardo.</p><br><br>
+          <img src="images/CPU.jpg" style="height:auto;width:30%;display:block;margin-left:auto;margin-right:auto;"><br><br>
+          <p>The USB hub on the robot is where the LIDAR, Depth cameras, speaker, touch display and arduino are connected.</p><br>
+        <div class="row">  
+          <img class="col-sm-4" src="images/USB_HUB.png" style="height:auto;width:30%;"><br><br>
+        <p style="color: red;" class="col-sm-6">1. ASUS BT-500 Bluetooth<br> 2. Intel Realsense camera (top)<br> 3. Intel Realsense camera (bottom)<br> 4. Hokuyo LIDAR<br> 5. Roboclaw Motor Driver<br> 6. JABRA Bluetooth Speaker and Mic<br> 7. Galaxy touch screen control (For display)<br>8. Arm Cortex M3 (USB to UART)<br> 9. Arduino Leonardo (USB TO UART)<br> </p>
+      </div><br><br>
+        <p> The ultrasonic sensors or <b>Range sensors (left image)</b> are connected to the <b>Circuit board (right image)</b> which is embedded with 
+          the arm-M3 processor. It also contains all of the power electronic circuit to deliver power to all of the sub subsystems of the Robot.<br><br>
+          <div class="row">
+          <img src="images/Ultrasonic_sensors.jpg" class="col-sm-6">
+          <img src="images/Circuit.jpg" class="col-sm-6"><br><br>
+        </div><br><br>
+          <p>The motors are controlled by a <b>Motor driver (left image)</b> connected to Arm processor board and power electronic circuit board.The control commands are given to the <b>Arduino Leonardo (right image)</b> and the arm processor.
+          The arm processor controlls all of the interactions with the motor, LED strips and ultrasonic sensors while the arduino handles the LED strip around the robot.</p>
+          </p>
         <div class="container-fluid">
           <div class="row">
           <img src="images/Motor_driver.jpg" class="col-sm-6"><img src="images/Arduino_Leonardo.jpg" class="col-sm-6">
@@ -109,18 +119,29 @@
       </div><br><br> 
          <p> To turn on the Robot simply push the breaker up. Press the power button on the CPU to turn ON the Robot.
         </p><br><br>
-        <img src="images/Push_breaker.jpg" style="display:block;margin-left: auto;margin-right:auto;width:auto;height:4%;"><br><br>
+        <img src="images/Push_breaker.jpg" style="display:block;margin-left: auto;margin-right:auto;width:50%;height:auto;"><br><br>
         <h2 class="mb-4">Battery</h2>
         <p>The current battery is Li-time rechargable LiFePo (Lithium Iron Phosphate) battery rated for 12V 50Ah. Two of these batteries are connected in series to make 24V. The battery is connected using ring terminals 
-          of the appropriate size crimped to the wire. Down below shows an image of the battery connected with ring connectors</p><br><br>
-          <img src="images/Battery.jpg" style="display:block;margin-left: auto;margin-right:auto;width:auto;height:4%;"><br><br>
+          of the appropriate size crimped to the wire. Down below shows an image of the battery connected with ring connectors.<br>
+          <a href="https://www.amazon.com/12V-50Ah-LiFePO4-Trolling-Lifetime/dp/B0CT5QT7DJ/ref=sr_1_13?crid=A0ZF0OBPCD91&dib=eyJ2IjoiMSJ9.6to-VLysLCgxx5k_FHTjDrFWfZ8644AQwJHdtp0NVWsFA2MsdtOY_v_jl-9hodRF0wCkCm-0eQrQI9M5eF7u0iLddmI5jD95hSPa0YMY5lyNdsLCF5kXtWlo17fiQsVSUewWY8Fe3ajar0nGHt-YVu5KSfIeVQnjsv3lQYWxFLPOyEBx9ywcQT2cPv4xs68Mkb-W8Z9gHntXpSCvPJ63ACgSM_-idMsxl5ua8eT5gfI.W8J-TwqrlF2-yHJhMZ1vkf5pPYJa7Rzdl1UCGurpJ0s&dib_tag=se&keywords=24%2Bvolt%2Blithium%2Bbattery%2B50ah&qid=1711419626&sprefix=24%2BVolt%2BLithium%2BBattery%2B50%2Caps%2C175&sr=8-13&th=1">Battery Amazon Link</a>
+        </p> <br><br>
+          <img src="images/Battery.jpg" style="display:block;margin-left: auto;margin-right:auto;width:50%;height:auto;"><br><br>
         <h2 class="mb-4">Charging</h2>
-        <p>There are two ways to charge the battery. 1. Set the charger to 24V and charge both batteries at the same time. 2. Set the charger to 12V and charge one battery at a time. The advantage of 
+        <p>There are two ways to charge the battery. <br>1. Set the charger to 24V and charge both batteries at the same time. <br>2. Set the charger to 12V and charge one battery at a time.<br> The advantage of 
           the first method is charging both batteries at the same time but leads to uneven battery charging in the long run. The first method is good if the battery are regularly checked and balanced. This can
           be overcome by using the second method. Make sure the battery voltages are same or close to each other.<br><br>
-          Connect the batteries to the charger as shown in the image.<br><br>   
-        <img src="images/Charging.jpg" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:50%"><br><br>
-
+          Connect the batteries to the charger as shown in the image.</p>
+          <p>To set the battery at 24V,12V mode simply press the black button on the charger until the <b>LiFePo mode (right image) </b> lights up. This mode works on both 12 and 24V mode and also has 
+            a <b>floating battery maintainer (right image)</b> which helps maintain the battery for a very long time. 
+          </p>   
+          <p><b>Warning : Turn ON the charger before connecting to the battery terminals, connecting the terminals without turning ON the battery will short the battery terminals. The BMS will protect the battery
+            from short circuits.
+          </b></p>
+          <br><br>
+        <div class="row">   
+        <img src="images/Charging.jpg" class="col-sm-6"><br><br>
+        <img src="images/Charger_mode.jpg" class="col-sm-6"><br><br>
+        </div><br><br>
           If the battery is going to stay idle then the best way to keep them safe is to put the charger on float mode and 
           connect them to the battery, this allows the battery to stay idle for even months. It is advised to remove the batteries every couple of months, connect them in parallel and balance out the uneven voltage.
 
@@ -159,22 +180,30 @@
         Hold the shoulder button (L1 - normal , L2 - turbo) and push the thumbstick to run the robot.<br><br>
         <h4>Mapping</h4><br>
          <p>To map the floor, the sensors of the robot, especially the LIDAR and motor controllers must be launched. To launch the sensors on the robot, run the launch file</p>
-         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup trial_wyca_till_laser_pointloud.launch</code></pre><br><br>   
-        <p>The ROS navigation stack uses a map based navigation. One of best methods to generate maps is SLAM (Simultaneous Localization And Mapping), which simultaneously localized and maps the robot. The map is generated using gmapping_slam toolbox
+         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup trial_wyca_till_laser_pointcloud.launch</code></pre><br><br>   
+        <p><b>Warning : It is recomended to push the red emergency button down before proceeding to run the above command. With the teleop not running , the 
+          program will take the touch screen input xy and starts moving the robot. Avoid this by pressing the red button, release the button once the teleop launch file is run. </b></p>
+         <p>The ROS navigation stack uses a map based navigation. One of best methods to generate maps is SLAM (Simultaneous Localization And Mapping), which simultaneously localized and maps the robot. The map is generated using gmapping_slam toolbox
           of ROS to map the robot. The launch files takes in LIDAR topic as argument, in our case we use "/scan_nan_cleaned".</p> <br><br>
           <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">rosrun gmapping slam_gmapping scan:=scan_nan_cleaned</code></pre><br><br>
           <p>Open rviz and add the "/map" topic for real time mapping visualization</p>
-          <img src="" alt="rviz_mapping">
+          <img src="images/rviz_mapping.png" alt="rviz_mapping" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%"><br>
           <p>Now move around the robot and map the surrounding. Once the mapping is done use the map server to save the generated map. </p>
           <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">rosrun map_server map_saver</code></pre><br><br>
-          <p>Additionally you can also specify the name of the image file and resolution as ROS arguments.</p>  
+          <p>Additionally you can also specify the name of the image file and resolution as ROS arguments. </p>
+          <p>Now the take the saved map and put it inside the folder H:\Ros_ws\src\keylo_config\ROS\ces_keylo\map and rename the pgm file as "map_amcl.pgm".</p>  
         <h4>Autonomous Navigation</h4><br>
         <p>The launch file for the navigation stack of keylo robot is also under the "keylo_bringup" folder. But the "test_no_front_end.launch" file under the "test" folder 
         launches all the necessary launch files required for navigation and teleoperation. </p>
     
         <p>To run the navigation stack of the Robot along with the localization (amcl particles), global, local costmap, map server, global and local trajectory planner, the command shown below is used to run the test_no_front_end launch file which does all of it. </p>
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup test_no_front_end</code></pre><br><br>
-        <img src="" alt="test_no_front">
+        <img src="images/test_no_front_end.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%">
+        <br><br>
+        <p>It is also required to run the <b>rviz_to_mbf.py</b> under <b>Ros_ws\src\keylo_bringup\launch\mbf_legacy\ folder.</b></p>
+        <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">python rviz_to_mbf.py</code></pre><br><br>
+        <p>Now to navigate the robot to the desired location, simply click on "2D Nav goal". Hold to set the position and orientation of the goal location. This will make the robot plan the path to the </p>
+        <img src="images/nav_goal.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%">
         <h4>Realsense Drivers</h4><br>
         <p>To install the realsense drivers for ROS melodic visit the Github Repo of realsense website, <a href="https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy">https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy</a>
         Install from the ubuntu apt package manager or build the drivers from source </p>
