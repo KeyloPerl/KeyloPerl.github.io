@@ -120,6 +120,13 @@
          <p> To turn on the Robot simply push the breaker up. Press the power button on the CPU to turn ON the Robot.
         </p><br><br>
         <img src="images/Push_breaker.jpg" style="display:block;margin-left: auto;margin-right:auto;width:50%;height:auto;"><br><br>
+        <p>There is also an emergency stop push button on the left side of the robot. This is a Hardware switch that is directy wired to motor controller. Push the button 
+          to immediately <b>stop the Robot (left image)</b>. Turn it clockwise to <b>release the push button (right image)</b>.
+        </p><br>
+        <div class="row">
+        <img src="images/button_push.jpg" class="col-sm-6">
+        <img src="images/button_rotate.jpg" class="col-sm-6">
+        </div><br><br>
         <h2 class="mb-4">Battery</h2>
         <p>The current battery is Li-time rechargable LiFePo (Lithium Iron Phosphate) battery rated for 12V 50Ah. Two of these batteries are connected in series to make 24V. The battery is connected using ring terminals 
           of the appropriate size crimped to the wire. Down below shows an image of the battery connected with ring connectors.<br>
@@ -143,10 +150,9 @@
         <img src="images/Charger_mode.jpg" class="col-sm-6"><br><br>
         </div><br><br>
           If the battery is going to stay idle then the best way to keep them safe is to put the charger on float mode and 
-          connect them to the battery, this allows the battery to stay idle for even months. It is advised to remove the batteries every couple of months, connect them in parallel and balance out the uneven voltage.
-
-
+          connect them to the battery, this allows the battery to stay idle for even months. It is advised to remove the batteries every couple of months, connect them in parallel and balance out the uneven voltage (as shown in the image).
         </p><br><br>
+        <img src="images/Battery_instructions.jpg" style="display:block;margin-left: auto;margin-right:auto;width:40%;height:auto;"><br><br>
 
         <h2 class="mb-4">ROS drivers</h2><br>
         <h4>Basics</h4>
@@ -224,7 +230,7 @@ yarn start # Start the App </code></pre><br><br>
           of any webpage will only start if there is some events that is triggered intially. This feature is bought forth for security purposes.
           <br>
           The voice to text recognition model is running in python. It uses the "vosk" speech recognition model to convert speech to text.</p><br><br> 
-          <img src="images/vosk_model.png"><br><br>
+          <img src="images/vosk_model.png"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:100%"><br><br>
           <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-python">from vosk import Model, KaldiRecognizer
 import requests
 import pyaudio
@@ -259,7 +265,7 @@ while True:
           <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">npm install # Install all the necessary dependencies           
 npm start # Start the Node server </code></pre><br><br>
           <p>The openai api runs in backend of the system, the image down below shows the openai api running in the backend of the system.</p><br><br> 
-          <img src="images/Openai_api_call.png"><br><br>
+          <img src="images/Openai_api_call.png"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:100%"><br><br>
 
           <p>The modified code for front and back end of the is available in the github repo : For front end <a href="https://github.com/sridharanram2001/talking_avatar">https://github.com/sridharanram2001/talking_avatar</a> and backend <a href="https://github.com/sridharanram2001/talking_avatar_backend">https://github.com/sridharanram2001/talking_avatar_backend</a></p>
 
