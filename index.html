@@ -13,15 +13,17 @@
     <script src="js/prism.js"></script>
     <link rel="stylesheet" href="css/prism.css">
 		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my_style.css">
   </head>
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
+			<nav id="sidebar" class="sidebar-fix">
+        
 				<div class="p-4 pt-5">
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/Keylo-small-e.jpg);"></a>
 	        <ul class="list-unstyled components mb-5">
-	          <li class="active">  
+            <li class="active">  
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quickstart</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
@@ -35,8 +37,9 @@
                 </li>
 	            </ul>
 	          </li>
+          </div>
             <li>
-              <a href="#">Hardware Upgrades</a>
+              <a href="#">Hardware Upgrades and Changes</a>
             </li>
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ROS driver</a>
@@ -74,19 +77,18 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+        <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+          
+            <button type="button" id="sidebarCollapse" class="btn btn-primary button-fix">
               <i class="fa fa-bars"></i>
               <span class="sr-only">Toggle Menu</span>
             </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        
+            <!--<button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
-            </button>
+            </button>-->
 
-          </div>
-        </nav>
+        <!-- </nav> -->
         <img src="images/Keylo-small-e.jpg" style="display:block;margin-left:auto;margin-right: auto;"><br><br>
         <h2 class="mb-4">About the robot</h2>
         <p>Keylo is a robot build by WYCA robotics for the purpose of telepresense. <a href="https://www.generationrobots.com/media/Wyca%20Keylo%20data%20sheet%20VE-MAJ.pdf">Datasheet</a>. The robot is built with a touch screen display, 
@@ -153,15 +155,158 @@
           connect them to the battery, this allows the battery to stay idle for even months. It is advised to remove the batteries every couple of months, connect them in parallel and balance out the uneven voltage (as shown in the image).
         </p><br><br>
         <img src="images/Battery_instructions.jpg" style="display:block;margin-left: auto;margin-right:auto;width:40%;height:auto;"><br><br>
+        <h2 class="mb-4">Harware Upgrades and Changes</h2>
+        <table class="table table-bordered">
+          <tr>
+          <th>S.no</th>
+          <th>Component</th>
+          <th>Old</th>
+          <th>New</th>
+        </tr>
+        <tr>  
+          <td>1</td>
+          <td>Battery</td>
+          <td><img src="images/Battery_old.jpg" style="width:100%;height:auto;margin:5px"><br>
+            <ul>
+              <li>WEIZE 12V Reachargable battery</li>
+              <li>Lead Acid AGM type battery</li>
+              <li>Capacity : 20Ah</li>
+              <li>No BMS</li>
+              <li>No cycles mentioned</li>
+            </ul>
+          </td>
+          <td>
+            <img src="images/Battery.jpg" style="width:80%;height:auto;margin:5px"><br>
+            <ul>
+              <li>LiTime 12V Plus </li>
+              <li>LiFePO4 Lithium Battery</li>
+              <li>Capacity : 50Ah</li>
+              <li>Built in BMS to protect from overcharging, overdischarging, shortcircuit protection etc</li>
+              <li>Over 4000+ cycles of charging and discharging</li>
+            </ul>
+            
+          </td>
+        </tr>
+
+        <tr>  
+          <td>2</td>
+          <td>NUC</td>
+          <td>
+            <img src="images/old_cpu_crop.jpg" style="width:50%;height:auto;">
+            <ul>
+              <li>Intel NUC6I5SYH </li>
+              <li>Processor : Intel® Core™ i5-6260U Processor (4M Cache, up to 2.90 GHz)</li>
+              <li>RAM : 16GB DDR4-2133 1.2V SO-DIMM</li>
+              <li>Storage : 128GB SSD</li>
+            </ul>
+
+          </td>
+          <td>
+            <img src="images/CPU.jpg" style="width:70%;height:auto;">
+            <ul>
+              <li>GEEKOM IT13 Mini PC</li>
+              <li>Processor : 13th Intel Core i7-13620H (10C/16T, up to 4.9GHz),</li>
+              <li>RAM :  32GB DDR4 RAM/li>
+              <li>Storage : 1TB PCIe Gen4</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>  
+          <td>3</td>
+          <td>Realsense Camera</td>
+          <td>
+            <img src="images/Realsense_camera_old.jpg" style="width:50%;height:auto;">
+            <ul>
+              <li>RGB-D camera Intel Realsense R200: Pointcloud</li>
+              <li>IR and RGB streams. USB 3.0 interface</li>
+              <li>Depth capture from 0.4 to 2.8m</li>
+              <li>Resolution : 1920x1080 for color camera and 640x480 for Infra red camera</li>
+            </ul>
+          </td>
+          <td>
+            <img src="images/depth-camera-d456ip_under_720px.png" style="width:50%;height:auto;">
+            <ul>
+              <li>Intel realsense D456 camera</li>
+              <li>Stero Depth Camera with USB C</li>
+              <li>0.6 m to 6 m depth and a resolution of 	less than 2% at 4m</li>
+              <li>Resolution : 1920x1080 for color camera and Up to 1280 x 720 stereo depth resolution</li>
+            </ul>
+          </td>
+
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>Front and Back plates</td>
+          <td>
+            <img src="images/old_camera_plate1.jpg" style="width:50%;height:auto;"><img src="images/old_camera_plate2.jpg" style="width:50%;height:auto;">
+            <ul>
+              <li>Old plates to hold the realsense R200 camera</li>
+            </ul>
+          </td>
+          <td>
+            <img src="images/New_camera_plate_1.jpg" style="width:50%;height:auto;"><img src="images/new_camera_plate2.jpg" style="width:50%;height:auto;">
+            <ul>
+              <li>New plates are designed to fit the new camera.</li>
+            </ul>
+            
+          </td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td>NUC power supply circuit</td>
+          <td>
+            <img src="images/Old_supply.jpg" style="width:50%;height:auto;"><img src="images/Old_connector.jpg" style="width:50%;height:auto;">
+            <ul>
+              <li>The old NUC takes the supply from the circuit board itself and powers the NUC.</li>
+              <li>However the circuit is desgined and biased only for the power capacity of the Intel NUC6I5SYH.</li>
+              <li>The Intel NUC is rated for 19V and a power requirement of 15W. </li>
+              <li>The voltage reading at the supply pin (in the leftmost picture) measures around 18.8 V and a max current of 3A</li>
+            </ul>
+          </td>
+          <td>
+            <img src="images/new_NUC_circuit.jpg" style="width:50%;height:auto;"><img src="images/CPU_connector.jpg" style="width:50%;height:auto;">
+            <ul>
+              <li>The power supply is bypassed and tapped from the source (leftmost picture) to power the new GEEKOM IT13 MiniPC.</li>
+              <li>To power the circuit a buck converter is used to bring down the voltage from 24V to 19V.</li>
+              <li>The newly added supply connector is shown in the rightmost image.</li>
+              <li>The GEEKOM PC is rated for 19V and 90W of power.</li>
+            </ul>
+          </td>
+        </tr>
+
+
+        </table><br><br>
+        <h4>More about the new NUC power circuit</h4>
+        <p>As mentioned earlier the power supply is tapped and used to power the new GEEKOM NUC. The 24V power supply input is 
+          bucked down to 19V and given as input to the NUC.The robots body is connected to ground (All of component's ground connections are screwed to robots body), 
+          one side of the buck conveter exposes the conductive PCB copper trace and components. Placing it directly on the robot would cause a dead short and completely 
+          burn the buck converter components.   
+          For this very reason, the buck converter is carefully placed on an insulating acrylic sheet and sticked to the robot using very strong double sided tape. 
+           An image of the buck converter is shown below.</p>
+          <img src="images/Buck_converter.jpg" style="width:20%;height:auto;display:block;margin-left: auto;margin-right: auto;"><br><br>
+        <p>The buck converter is capable of handling a maximum of 8A of current. The wires are also rated for handling such high current.</p>
+        <p>
+          The power block as shown in the image down below is tapped, a T joint is made to connect one wire going to power the main circuit 
+          board and the other to power the NUC through the buck converter.
+        </p><br><br>
+        <img src="images/NUC_new_supply_1.jpg" style="width:40%;height:auto;display:block;margin-left: auto;margin-right: auto;"><br><br>
+         <p> 
+          The schematic circuit diagram of the system is shown below.  
+        </p>
+        <img src="images/NUC_supply_circuit.png" style="width:80%;height:auto;display:block;margin-left: auto;margin-right: auto;"><br><br>
 
         <h2 class="mb-4">ROS drivers</h2><br>
         <h4>Basics</h4>
         <p>The robot uses ROS melodic. The ROS drivers are found in the ubuntu home named as "Ros_ws". The "src/keylo_bringups" inside the workspace contain 
-          the launch files required to launch all the ROS nodes.
+          the launch files required to launch all the ROS nodes. The other packages are depend on the "keylo_bringup" package and are essential to run all the main packages 
           <img src="images/keylo_bringup.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:150%">   
         </p><br>
-        <p>A list of launch files in the "keylo_bringup" is shown in the image below</p><br>
-        <img src="images/keylo_launch.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:150%"><br><br>   
+        <p>A list of launch files in the "keylo_bringup" is shown in the image below.</p><br>
+        <img src="images/keylo_launch.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:150%"><br><br>
+        The important testing launch file are placed under "test" folder.<br><br>   
         <h4>Teleoperation</h4><br>
         To teleoperate the robot, the motors controllers must be run using the ROS launch file.<br> 
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup trial_keylo_base.launch</code></pre>
@@ -197,12 +342,15 @@
           <p>Now move around the robot and map the surrounding. Once the mapping is done use the map server to save the generated map. </p>
           <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">rosrun map_server map_saver</code></pre><br><br>
           <p>Additionally you can also specify the name of the image file and resolution as ROS arguments. </p>
-          <p>Now the take the saved map and put it inside the folder H:\Ros_ws\src\keylo_config\ROS\ces_keylo\map and rename the pgm file as "map_amcl.pgm".</p>  
+          <p>Now the take the saved map and put it inside the folder <b>Ros_ws\src\keylo_config\ROS\ces_keylo\map</b> and rename the pgm file as <b>"map_amcl.pgm"</b>.</p>  
         <h4>Autonomous Navigation</h4><br>
         <p>The launch file for the navigation stack of keylo robot is also under the "keylo_bringup" folder. But the "test_no_front_end.launch" file under the "test" folder 
         launches all the necessary launch files required for navigation and teleoperation. </p>
     
         <p>To run the navigation stack of the Robot along with the localization (amcl particles), global, local costmap, map server, global and local trajectory planner, the command shown below is used to run the test_no_front_end launch file which does all of it. </p>
+        <p>The driver uses "mbf_costmap_nav" package for costmaps and path planning. The abbrevation of mbf is "Move Base Flexible" which is a flexible version of the 
+          traditional "move_base" package that gives freedom and flexibility to tune more navigation parameters. 
+        </p>
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup test_no_front_end</code></pre><br><br>
         <img src="images/test_no_front_end.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%">
         <br><br>
@@ -210,6 +358,11 @@
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">python rviz_to_mbf.py</code></pre><br><br>
         <p>Now to navigate the robot to the desired location, simply click on "2D Nav goal". Hold to set the position and orientation of the goal location. This will make the robot plan the path to the </p>
         <img src="images/nav_goal.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%">
+        <p>
+          Tuning is also an important aspect of the navigation. The paramaters for tuning will be available under <b> Ros_ws\src\keylo_config\ROS\ces_keylo\nav\costmap_common_params.yaml</b> file. 
+          "obstacle_range" and "inflation_radius" are the two most important parameters to tune. 
+        </p>
+        <img src="images/common_costmap_params.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:80%"><br><br>
         <h4>Realsense Drivers</h4><br>
         <p>To install the realsense drivers for ROS melodic visit the Github Repo of realsense website, <a href="https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy">https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy</a>
         Install from the ubuntu apt package manager or build the drivers from source </p>
