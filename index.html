@@ -351,12 +351,15 @@
           traditional "move_base" package that gives freedom and flexibility to tune more navigation parameters. 
         </p>
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup test_no_front_end</code></pre><br><br>
-        <img src="images/test_no_front_end.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%">
+        <img src="images/test_no_front_end.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%"><br><br>
+        <img src="images/test_no_front_end_2.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:80%"><br><br>
+        <img src="images/test_no_front_end_3.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:80%"><br><br>
         <br><br>
         <p>It is also required to run the <b>rviz_to_mbf.py</b> under <b>Ros_ws\src\keylo_bringup\launch\mbf_legacy\ folder.</b></p>
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">python rviz_to_mbf.py</code></pre><br><br>
         <p>Now to navigate the robot to the desired location, simply click on "2D Nav goal". Hold to set the position and orientation of the goal location. This will make the robot plan the path to the </p>
         <img src="images/nav_goal.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%">
+        <br><br>
         <p>
           Tuning is also an important aspect of the navigation. The paramaters for tuning will be available under <b> Ros_ws\src\keylo_config\ROS\ces_keylo\nav\costmap_common_params.yaml</b> file. 
           "obstacle_range" and "inflation_radius" are the two most important parameters to tune. 
