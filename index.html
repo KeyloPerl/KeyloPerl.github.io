@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -18,53 +17,53 @@
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar" class="sidebar-fix">
+			<nav id="sidebar" class="navbar sidebar-fix sidebar-align">
         
 				<div class="p-4 pt-5">
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/Keylo-small-e.jpg);"></a>
-	        <ul class="list-unstyled components mb-5">
-	          <li class="active">  
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quickstart</a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu">
+	        <ul class="list-unstyled components mb-5 nav" style="display: contents;">
+            <li class="nav-item">
+              <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">QuickStart</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu1">
                 <li>
-                    <a href="#Overiew">Overview</a>
+                    <a href="#Overview">Overview</a>
                 </li>
                 <li>
                     <a href="#Battery">Battery</a>
                 </li>
                 <li>
-                    <a href="#Charging ">Charging</a>
-                </li>
-	            </ul>
+                  <a href="#Charging">Charging</a>
+              </li>
+              </ul>
 	          </li>
-            <li>
-              <a href="#">Hardware Upgrades and Changes</a>
+            <li class="nav-item">
+              <a href="#Hardware" class="nav-link">Hardware Upgrades and Changes</a>
             </li>
-	          <li>
+	         <li class="nav-item">
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">ROS driver</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="#">Basics</a>
+                    <a href="#Basics">Basics</a>
                 </li>
                 <li>
-                    <a href="#">Teleoperation</a>
+                    <a href="#Teleop">Teleoperation</a>
                 </li>
                 <li>
-                  <a href="#">Mapping</a>
+                  <a href="#Map">Mapping</a>
               </li>
                 <li>
-                    <a href="#">Autonomous Navigation</a>
+                    <a href="#Nav">Autonomous Navigation</a>
                 </li>
                 <li>
-                  <a href="#">Realsense drivers</a>
+                  <a href="#Real">Realsense drivers</a>
                 </li>
               </ul>
 	          </li>
-	          <li>
-              <a href="#">Talking Avatar</a>
-	          </li>
-	          <li>
-              <a href="#">Future Improvements</a>
+            <!--<li class="nav-item">
+              <a href="#ROS" class="nav-link">ROS Driver</a>
+	          </li>-->
+	          <li class="nav-item">
+              <a href="#Avatar" class="nav-link">Talking Avatar</a>
 	          </li>
 	        </ul>
 
@@ -74,8 +73,8 @@
     	</nav>
 
         <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5">
-
+      <div id="content" class="p-4 p-md-5" data-spy="scroll" data-target="#navbar-example2" data-offset="0" data-bs-smooth-scroll="true">
+        
         <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
           
             <button type="button" id="sidebarCollapse" class="btn btn-primary button-fix">
@@ -88,13 +87,14 @@
             </button>-->
 
         <!-- </nav> -->
+       
         <img src="images/Keylo-small-e.jpg" style="display:block;margin-left:auto;margin-right: auto;"><br><br>
-        <h2 class="mb-4">About the robot</h2>
+        <h2 class="mb-4" id="Overview">Overview</h2>
         <p>Keylo is a robot build by WYCA robotics for the purpose of telepresense. <a href="https://www.generationrobots.com/media/Wyca%20Keylo%20data%20sheet%20VE-MAJ.pdf">Datasheet</a>. The robot is built with a touch screen display, 
         speakers and camera for interactions. With developements in AI, the Robot can be programmed to learn from its surroundings using the sensors and trained for
       intelligence. The robot can Autonomously navigate using its sensor, obtain various informations using sensors such as depth camera, range sensors, LIDAR sensor and MIC sensor to make intelligent decisions, human interaction, 
     robot planning and many more.  </p>
-        <h2 class="mb-4">Quick start</h2>
+        <h2 class="mb-4" id="Quickstart">Quickstart</h2>
         <p>The Robot is equipped with an Intel NUC CPU that runs ubuntu 18.04 with preinstalled ROS melodic (Now replaced with GEEKOM IT13 mini PC). Down below is an image of the CPU in the robot 
           connected to the touch screen display with HDMI cables. The new GEEKOM MiniPC is preinstalled with Windows 11 and dual booted with ubuntu 18.04 to support ROS melodic drivers.    
         </p> 
@@ -128,13 +128,13 @@
         <img src="images/button_push.jpg" class="col-sm-6">
         <img src="images/button_rotate.jpg" class="col-sm-6">
         </div><br><br>
-        <h2 class="mb-4">Battery</h2>
+        <h2 class="mb-4" id="Battery">Battery</h2>
         <p>The current battery is Li-time rechargable LiFePo (Lithium Iron Phosphate) battery rated for 12V 50Ah. Two of these batteries are connected in series to make 24V. The battery is connected using ring terminals 
           of the appropriate size crimped to the wire. Down below shows an image of the battery connected with ring connectors.<br>
           <a href="https://www.amazon.com/12V-50Ah-LiFePO4-Trolling-Lifetime/dp/B0CT5QT7DJ/ref=sr_1_13?crid=A0ZF0OBPCD91&dib=eyJ2IjoiMSJ9.6to-VLysLCgxx5k_FHTjDrFWfZ8644AQwJHdtp0NVWsFA2MsdtOY_v_jl-9hodRF0wCkCm-0eQrQI9M5eF7u0iLddmI5jD95hSPa0YMY5lyNdsLCF5kXtWlo17fiQsVSUewWY8Fe3ajar0nGHt-YVu5KSfIeVQnjsv3lQYWxFLPOyEBx9ywcQT2cPv4xs68Mkb-W8Z9gHntXpSCvPJ63ACgSM_-idMsxl5ua8eT5gfI.W8J-TwqrlF2-yHJhMZ1vkf5pPYJa7Rzdl1UCGurpJ0s&dib_tag=se&keywords=24%2Bvolt%2Blithium%2Bbattery%2B50ah&qid=1711419626&sprefix=24%2BVolt%2BLithium%2BBattery%2B50%2Caps%2C175&sr=8-13&th=1">Battery Amazon Link</a>
         </p> <br><br>
           <img src="images/Battery.jpg" style="display:block;margin-left: auto;margin-right:auto;width:50%;height:auto;"><br><br>
-        <h2 class="mb-4">Charging</h2>
+        <h2 class="mb-4" id="Charging">Charging</h2>
         <p>There are two ways to charge the battery. <br>1. Set the charger to 24V and charge both batteries at the same time. <br>2. Set the charger to 12V and charge one battery at a time.<br> The advantage of 
           the first method is charging both batteries at the same time but leads to uneven battery charging in the long run. The first method is good if the battery are regularly checked and balanced. This can
           be overcome by using the second method. Make sure the battery voltages are same or close to each other.<br><br>
@@ -154,7 +154,7 @@
           connect them to the battery, this allows the battery to stay idle for even months. It is advised to remove the batteries every couple of months, connect them in parallel and balance out the uneven voltage (as shown in the image).
         </p><br><br>
         <img src="images/Battery_instructions.jpg" style="display:block;margin-left: auto;margin-right:auto;width:40%;height:auto;"><br><br>
-        <h2 class="mb-4">Harware Upgrades and Changes</h2>
+        <h2 class="mb-4" id="Hardware">Harware Upgrades and Changes</h2>
         <table class="table table-bordered">
           <tr>
           <th>S.no</th>
@@ -297,8 +297,8 @@
         </p>
         <img src="images/NUC_supply_circuit.png" style="width:80%;height:auto;display:block;margin-left: auto;margin-right: auto;"><br><br>
 
-        <h2 class="mb-4">ROS drivers</h2><br>
-        <h4>Basics</h4>
+        <h2 class="mb-4" id="ROS">ROS drivers</h2><br>
+        <h4 id="Basics">Basics</h4>
         <p>The robot uses ROS melodic. The ROS drivers are found in the ubuntu home named as "Ros_ws". The "src/keylo_bringups" inside the workspace contain 
           the launch files required to launch all the ROS nodes. The other packages are depend on the "keylo_bringup" package and are essential to run all the main packages 
           <img src="images/keylo_bringup.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:150%">   
@@ -306,7 +306,7 @@
         <p>A list of launch files in the "keylo_bringup" is shown in the image below.</p><br>
         <img src="images/keylo_launch.png" style="display:block;margin-left:auto;margin-right:auto;height:auto;width:150%"><br><br>
         The important testing launch file are placed under "test" folder.<br><br>   
-        <h4>Teleoperation</h4><br>
+        <h4 id="Teleop">Teleoperation</h4><br>
         To teleoperate the robot, the motors controllers must be run using the ROS launch file.<br> 
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup trial_keylo_base.launch</code></pre>
         <br><p>This launch files launches all the base sensors and motors of keylo.</p>
@@ -328,7 +328,7 @@
         <p>The teleop can be achieved by running the following command. Make sure to add the right subdirectory.</p>
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch teleop_twist_joy teleop.launch joy_dev:=/dev/input/js1</code></pre><br><br>
         Hold the shoulder button (L1 - normal , L2 - turbo) and push the thumbstick to run the robot.<br><br>
-        <h4>Mapping</h4><br>
+        <h4 id="Map">Mapping</h4><br>
          <p>To map the floor, the sensors of the robot, especially the LIDAR and motor controllers must be launched. To launch the sensors on the robot, run the launch file</p>
          <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup trial_wyca_till_laser_pointcloud.launch</code></pre><br><br>   
         <p><b>Warning : It is recomended to push the red emergency button down before proceeding to run the above command. With the teleop not running , the 
@@ -342,14 +342,63 @@
           <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">rosrun map_server map_saver</code></pre><br><br>
           <p>Additionally you can also specify the name of the image file and resolution as ROS arguments. </p>
           <p>Now the take the saved map and put it inside the folder <b>Ros_ws\src\keylo_config\ROS\ces_keylo\map</b> and rename the pgm file as <b>"map_amcl.pgm"</b>.</p>  
-        <h4>Autonomous Navigation</h4><br>
+        <h4 id="Nav">Autonomous Navigation</h4><br>
         <p>The launch file for the navigation stack of keylo robot is also under the "keylo_bringup" folder. But the "test_no_front_end.launch" file under the "test" folder 
         launches all the necessary launch files required for navigation and teleoperation. </p>
-    
-        <p>To run the navigation stack of the Robot along with the localization (amcl particles), global, local costmap, map server, global and local trajectory planner, the command shown below is used to run the test_no_front_end launch file which does all of it. </p>
+        <h4 class="mb-4">Global costmap</h4>
+        <p><b>Global costmaps are an essential component in the navigation stack of a robot running on ROS (Robot Operating System). They represent the environment in which the robot operates and are used for global path planning</b>
+          The primary purpose of a global costmap is to enable the robot to plan a path from its current location to a target location, taking into account the static and semi-static obstacles in its environment. It provides a comprehensive overview of the environment, which helps in generating an optimal path that avoids obstacles and navigates through free space.</p>  
+        <h4>Common Layers in Global Costmaps</h4><br>
+          <b>Static Layer</b>
+          <ul>
+          <li>Represents static obstacles, typically derived from a static map of the environment.</li> 
+          <li>This layer does not change unless the static map itself changes.</li>
+          <li>Example: Walls, furniture, and other permanent fixtures.</li>
+          </ul>
+
+          <b>Inflation Layer</b>
+          <ul>
+          <li>Adds a buffer zone around obstacles, creating a gradient of increasing cost as you approach the obstacle.</li> 
+          <li>This ensures that the robot maintains a safe distance from obstacles.</li>
+          <li>Example: Creating a buffer around a wall to prevent the robot from getting too close.</li>
+          </ul>
+          
+          <b>Obstacle Layer</b>
+          <ul>
+          <li>Incorporates data from sensors to identify and represent obstacles. In a global costmap, this might include semi-static obstacles that can change slowly over time.</li>
+          <li>Example: Detecting and adding chairs that might be moved occasionally.</li>
+        </ul>
+
+          <b>Other Possible Layers</b>
+          Layers for marking certain areas as forbidden zones, clearing areas based on specific criteria, or incorporating additional sensor data like sonar or RGB-D cameras.
+          <br><br>
+          <h4 class="mb-4">Local costmap</h4>
+          <p>Local costmaps in the ROS (Robot Operating System) navigation stack is used for short-term obstacle avoidance and local path planning. 
+          They represent the immediate surroundings of the robot and help in dynamically adjusting the path to avoid obstacles as the robot moves.
+          Local costmap provides real-time information about the robot's immediate environment, enabling it to navigate around obstacles and dynamically adjust its path. 
+          This is essential for ensuring safe and efficient movement, especially in environments where obstacles can change or move frequently.
+        </p>
+        <br>
+        <h4 class="mb-4">Path Planning</h4>
+        <p>Path planning in ROS (Robot Operating System) navigation stack involves computing a safe and efficient route for a robot to follow from its current position to a desired goal position. 
+        In ROS, this task is typically handled by global and local planners, each serving distinct roles.</p><br>
+        <b>Global Path Planner</b>
+        <p>
+          The global planner is responsible for generating a high-level plan that guides the robot from its starting point to the goal. It operates on the global costmap, which represents the entire environment or a large portion of it, including static and dynamic obstacles.
+          Common algorithms used include A*, Dijkstra, and other graph-based search methods.In ROS, the global planner can be configured using different plugins, navfn/NavfnROS is a commonly used global planner plugin (also used in the Robot driver).
+        </p><br>
+        <b>Local Planner</b><br>
+        <p>
+          The local planner operates in conjunction with the global planner. It generates short-term, detailed paths that adapt to dynamic changes in the environment, such as moving obstacles. It uses the local costmap, which represents the robot's immediate surroundings.
+          It handles dynamic obstacles, ensuring the robot can navigate safely even in changing environments. Common local planners include Dynamic Window Approach (DWA) and Timed Elastic Band (TEB). The robot's ROS driver uses the TEB local planning approach.
+        </p>
+        <br><br>
+
+          <p>To run the navigation stack of the Robot along with the localization (amcl particles), global, local costmap, map server, global and local trajectory planner, the command shown below is used to run the test_no_front_end launch file which does all of it. </p>
         <p>The driver uses "mbf_costmap_nav" package for costmaps and path planning. The abbrevation of mbf is "Move Base Flexible" which is a flexible version of the 
           traditional "move_base" package that gives freedom and flexibility to tune more navigation parameters. 
         </p>
+      
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch keylo_bringup test_no_front_end</code></pre><br><br>
         <img src="images/test_no_front_end.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%"><br><br>
         <img src="images/test_no_front_end_2.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:80%"><br><br>
@@ -360,18 +409,30 @@
         <p>Now to navigate the robot to the desired location, simply click on "2D Nav goal". Hold to set the position and orientation of the goal location. This will make the robot plan the path to the </p>
         <img src="images/nav_goal.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:30%">
         <br><br>
+
         <p>
           Tuning is also an important aspect of the navigation. The paramaters for tuning will be available under <b> Ros_ws\src\keylo_config\ROS\ces_keylo\nav\costmap_common_params.yaml</b> file. 
           "obstacle_range" and "inflation_radius" are the two most important parameters to tune. 
         </p>
+        <p>
+          <b>Obstacle Range</b><br>
+          Obstacle range is a parameter that determines the maximum distance at which the robot's sensors can detect obstacles. 
+            This range influences how far the robot looks ahead in its environment to identify potential obstacles that could affect its navigation.
+        </p>
+        <p>
+          <b>Inflation Radius</b><br>
+          Inflation radius is a parameter that defines the distance around each detected obstacle within which additional costs are assigned. 
+          This creates a buffer zone around obstacles, ensuring the robot maintains a safe distance from them while navigating.
+        </p>
         <img src="images/common_costmap_params.png" alt="test_no_front"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:80%"><br><br>
-        <h4>Realsense Drivers</h4><br>
+        <p>Tune both the obstacle_range and inflation_radius to optimize the global and local costmaps thereby allowing efficient navigation.</p><br><br>
+        <h4 id="Real">Realsense Drivers</h4><br>
         <p>To install the realsense drivers for ROS melodic visit the Github Repo of realsense website, <a href="https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy">https://github.com/IntelRealSense/realsense-ros/tree/ros1-legacy</a>
         Install from the ubuntu apt package manager or build the drivers from source </p>
         <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">roslaunch realsense2_camera rs_camera.launch      # To launch a single camera
 roslaunch realsense2_camera rs_multiple.launch    # To launch multiple cameras</code></pre><br><br>
 
-        <h2 class="mb-4">Talking Avatar</h2><br>
+        <h2 class="mb-4" id="Avatar">Talking Avatar</h2><br>
           The talking avatar is a opensource program from <a href="https://github.com/bornfree/talking_avatar">https://github.com/bornfree/talking_avatar</a>. This react applications uses webRendering of the avatar
           with 3D animations. The backend of this program at <a href="https://github.com/bornfree/talking_avatar_backend">https://github.com/bornfree/talking_avatar_backend</a> is node application that uses azure_api in the backend 
           to convert text to speech and animate lip movements. The azure api only provides some hours of free audio api request, after which it becomes paid.
@@ -419,7 +480,9 @@ while True:
           </p>
           <pre data-src="plugins/toolbar/prism-toolbar.js" data-prismjs-copy="Copy"><code class="language-terminal">npm install # Install all the necessary dependencies           
 npm start # Start the Node server </code></pre><br><br>
-          <p>The openai api runs in backend of the system, the image down below shows the openai api running in the backend of the system.</p><br><br> 
+          <p>The openai api runs in backend of the system, the image down below shows the openai api running in the backend of the system. The output from the api request is sent to the 
+            text to voice azure api and then used to mimic facial features.
+          </p><br><br> 
           <img src="images/Openai_api_call.png"  style="display:block;margin-left:auto;margin-right:auto;height:auto;width:100%"><br><br>
 
           <p>The modified code for front and back end of the is available in the github repo : For front end <a href="https://github.com/sridharanram2001/talking_avatar">https://github.com/sridharanram2001/talking_avatar</a> and backend <a href="https://github.com/sridharanram2001/talking_avatar_backend">https://github.com/sridharanram2001/talking_avatar_backend</a></p>

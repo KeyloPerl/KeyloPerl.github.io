@@ -14,3 +14,12 @@ z-index: 1000;
     left:10px;
     z-index: 1000;
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.sidebar-align
+  {
+    align-items: baseline;
+  }
